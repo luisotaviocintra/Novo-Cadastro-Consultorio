@@ -1,18 +1,6 @@
 from tkinter import *
-import sqlite3
-from tkinter import messagebox
 
 
-# Banco de dados!
-database = "paciente.db"
-
-conn = sqlite3.connect(database)
-cur = conn.cursor()
-cur.execute(
-    "CREATE TABLE IF NOT EXISTS paciente (id INTEGER PRIMARY KEY , nome TEXT, sobrenome TEXT, email TEXT, cpf TEXT)")
-conn.commit()
-conn.close()
-# Fim do Banco de dados!
 class Gui():
 
     window = Tk()
@@ -47,7 +35,6 @@ class Gui():
     lblobservacao.grid(row=4, column=0)
     entObservacao = Entry(window, textvariable=txtObservacao)
     entObservacao.grid(row=4, column=1)
-
 
 
     listPacientes = Listbox(window)
